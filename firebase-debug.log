@@ -1,36 +1,28 @@
-[debug] [2017-07-21T04:31:17.005Z] ----------------------------------------------------------------------
-[debug] [2017-07-21T04:31:17.009Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\LABORATORIA 0092\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-07-21T04:31:17.009Z] CLI Version:  3.9.1
-[debug] [2017-07-21T04:31:17.009Z] Platform:     win32
-[debug] [2017-07-21T04:31:17.010Z] Node Version: v6.9.4
-[debug] [2017-07-21T04:31:17.011Z] Time:         Thu Jul 20 2017 23:31:17 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T04:31:17.011Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T13:08:33.224Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T13:08:33.227Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\LABORATORIA 0092\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-21T13:08:33.227Z] CLI Version:  3.9.1
+[debug] [2017-07-21T13:08:33.227Z] Platform:     win32
+[debug] [2017-07-21T13:08:33.227Z] Node Version: v6.9.4
+[debug] [2017-07-21T13:08:33.228Z] Time:         Fri Jul 21 2017 08:08:33 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:33.228Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-07-21T04:31:17.030Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-07-21T04:31:17.031Z] > authorizing via signed-in user
-[debug] [2017-07-21T04:31:17.033Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-07-21T04:31:17.033Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/AUoKwYcCZUdBum-X9YOubKmweedynss_EZWyML78mLY',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Thu Jul 20 2017 23:31:17 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T04:31:17.511Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T04:31:17.596Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/monyapp-bf79c  
- Thu Jul 20 2017 23:31:17 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T04:31:18.655Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T04:31:18.657Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/monyapp-bf79c/tokens  
- Thu Jul 20 2017 23:31:18 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T04:31:19.455Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:33.248Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-21T13:08:33.249Z] > authorizing via signed-in user
+[debug] [2017-07-21T13:08:33.252Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/monyapp-bf79c  
+ Fri Jul 21 2017 08:08:33 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:34.326Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:34.330Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/monyapp-bf79c/tokens  
+ Fri Jul 21 2017 08:08:34 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:36.229Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\LABORATORIA 0092\Desktop\mony-firebase'...
 [info] 
-[debug] [2017-07-21T04:31:19.461Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/monyapp-bf79c  
- Thu Jul 20 2017 23:31:19 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T04:31:20.421Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T04:31:20.422Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/516782594145/clients/_:getWebAppConfig  
- Thu Jul 20 2017 23:31:20 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T04:31:22.260Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:36.244Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/monyapp-bf79c  
+ Fri Jul 21 2017 08:08:36 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:37.456Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:37.458Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/516782594145/clients/_:getWebAppConfig  
+ Fri Jul 21 2017 08:08:37 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:38.445Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 

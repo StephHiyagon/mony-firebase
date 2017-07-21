@@ -4,11 +4,11 @@ const render = (root)=>{
     const section = $('<section class="components"></section>');
 
     if(state.screen == null){
-        section.append(ValidateRuc( _ => render(root)));
-    }else{
+        section.append(UserRegister( _ => render(root)));
+    }
+    else{
         section.append(state.screen( _ => render(root)));
-    };
-
+    }
     root.append(section);
 };
 
@@ -38,7 +38,7 @@ const stateUser = {
 const stateCompany = {
     ruc : null,
     razonsocial : null,
-	  image : null,
+    image : null,
     estado : null,
     tipo : null,
     direction : null

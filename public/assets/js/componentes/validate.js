@@ -1,11 +1,11 @@
-const details = (container) => {
+const details = (container,update) => {
     container.empty();
     const divResponse = $('<div class="response"></div>');
     const messageValidate = $('<span class="text-danger"></span>');
     const btnSave = $('<button id="btnSave" class="btn btn-default save" type="submit">Guardar Datos</button>');
 
-    if ((typeof data) === "string"){
-        const message = $(`<span class="text-danger">${data}</span>`);
+    if ((typeof state.dataSunat) === "string"){
+        const message = $(`<span class="text-danger">${state.dataSunat}</span>`);
         divResponse.append(message);
     }else if(state.dataSunat.tipo_contribuyente !== "PERSONA NATURAL SIN NEGOCIO"){
         const ulData = $(`<ul class="list-group">
@@ -29,6 +29,7 @@ const details = (container) => {
       stateCompany.tipo = state.dataSunat.tipo_contribuyente;
       stateCompany.direction = state.dataSunat.direccion;
         // state.screen = PerfilRegister;
+        //update();
         console.log("aki");
         db.ref('data').push({
             user :{
@@ -109,7 +110,7 @@ const ValidateRuc = (update) => {
                   console.log(response.data);
                   console.log(response.status);
                   state.dataSunat = response.data;
-                  details(validateContainer);
+                  details(validateContainer,update);
               })
               .catch(function (response) {
                   console.log("algo ocurrió");
