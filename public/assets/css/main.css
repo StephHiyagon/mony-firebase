@@ -2,11 +2,27 @@
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
-  color: #212121; }
+  color: #FFFFFF; }
 
 .navbar {
-  padding: 2rem; }
+  padding: 2rem;
+  margin-bottom: 0 !important; }
   .navbar img {
-    width: 4rem; }
+    width: 11rem; }
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/emprendedor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45rem; }
+  .home h1 {
+    font-family: "Source Sans Pro", sans-serif; }
+  .home button {
+    background-color: #FFC107;
+    font-weight: bold; }
 
 /*# sourceMappingURL=main.css.map */
