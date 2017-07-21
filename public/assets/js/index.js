@@ -12,22 +12,14 @@ const render = (root)=>{
     root.append(section);
 };
 
-// var config = {
-//     apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
-//     authDomain: "monyapp-bf79c.firebaseapp.com",
-//     databaseURL: "https://monyapp-bf79c.firebaseio.com",
-//     projectId: "monyapp-bf79c",
-//     storageBucket: "",
-//     messagingSenderId: "516782594145"
-//   };
-//
-// firebase.initializeApp(config);
 var db = firebase.database();
 
 const state = {
     screen : null
 }
+
 const stateUser = {
+    token : null,
     name : null,
     email : null,
 }
@@ -45,13 +37,13 @@ const stateProfile = {
     monto : null,
     description : null,
     image : null,
-    rubro :null
+    rubro :null,
+    recompensa :{
+        producto : false,
+        acciones : false
+    }
 }
 
-const stateRecompensa = {
-    producto : false,
-    acciones : false
-}
 
 $( _=>{
     const root =$('#root');
