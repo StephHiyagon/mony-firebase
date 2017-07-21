@@ -4,31 +4,42 @@ const render = (root)=>{
     const section = $('<section class="components"></section>');
 
     if(state.screen == null){
-        section.append(PerfilRegister( _ => render(root)));
-    }else{
+        section.append(Home( _ => render(root)));
+    }
+    else{
         section.append(state.screen( _ => render(root)));
-    };
-
+    }
     root.append(section);
 };
 
+var config = {
+    apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
+    authDomain: "monyapp-bf79c.firebaseapp.com",
+    databaseURL: "https://monyapp-bf79c.firebaseio.com",
+    projectId: "monyapp-bf79c",
+    storageBucket: "",
+    messagingSenderId: "516782594145"
+  };
+
+firebase.initializeApp(config);
 var db = firebase.database();
 
 const state = {
-    screen : null
+    screen : null,
+    dataSunat:null
 }
 
 const stateUser = {
-    token : null,
     name : null,
     email : null,
+    token : null,
     pwd : null
 }
 
 const stateCompany = {
     ruc : null,
     razonsocial : null,
-	image : null,
+    image : null,
     estado : null,
     tipo : null,
     direction : null
@@ -40,13 +51,20 @@ const stateProfile = {
     image : null,
     rubro :null,
     recompensa :{
-        producto : false,
-        acciones : false
+       producto : false,
+       acciones : false
     }
 }
-
 
 $( _=>{
     const root =$('#root');
     render(root);
-})
+});
+
+$(window).scroll(function() {
+	if ($(window).scrollTop() > 20 ){    
+ 		$('nav').addClass('show-bg');
+    } else {
+        $('nav').removeClass('show-bg');
+ 	};   	 
+});

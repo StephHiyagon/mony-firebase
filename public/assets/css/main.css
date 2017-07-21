@@ -1,3 +1,52 @@
+body{
+    overflow-x: hidden;
+}
+
+.img-responsive{
+    margin: auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.transition {    
+    -webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+.funciones h2{
+    font-weight: bold;
+}
+
+.funciones .sub__title{
+    text-align: center; 
+    padding-bottom: 0.2em;
+}
+.navbar-default .navbar-nav>.active>a{
+    border-radius: 10px!important;
+    background: #fff!important;
+    color : #000!important;
+}
+.home button{
+    padding:15px 15px;
+    border: none;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #fff!important;
+    font-weight: bold;
+}
+.show-bg{
+    background-color: rgba(0,0,0,0.8)!important;
+}
+
+.navbar-default{
+    background: transparent!important;
+    border: none!important;
+}
+.home h1{
+    font-size: 3.5em!important;
+    margin-bottom: 60px!important;
+}
 #iprofile{
     width: 150px;
     height: 22vh;
@@ -16,7 +65,6 @@
     font-weight: bold;
 }
 
-
 .save{
     padding:0.6em 2.5em!important;
     background: #fec007;
@@ -25,6 +73,9 @@
 .recom{
      width: 30px;
      height: 30px;
+}
+.progress__register {
+  margin-bottom: 70px;
 }
 .estado-3pasos {
     width: 90%;
@@ -49,7 +100,7 @@
 .estado-2pasos .paso-2 span, .estado-3pasos .paso-3 span, .estado-3pasos .paso-4 span{
   right: 0;
 }
-      
+
 .estado-3pasos li {
     height: 14px;
     position: relative;
@@ -62,7 +113,7 @@ li{
     list-style-type: none;
  }
       
- .estado-login .presente span {
+.estado-login .presente span {
     border: 3px solid #fec007;
     color: #fec007;
 }
@@ -94,3 +145,72 @@ li{
     top: 0;
     text-align: center;
 }
+
+.save {
+  background: #fec007;
+}
+
+.navbar {
+  padding: 2rem;
+  margin-bottom: 0 !important; }
+  .navbar img {
+    width: 11rem; }
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+  position: relative;
+  height: 100vh!important;
+  color: #FFFFFF; }
+  .home h1 {
+    font-family: "Source Sans Pro", sans-serif; }
+  .home button {
+    background-color: #FFC107;
+    font-weight: bold; }
+  .home button:hover {
+    background-color: #FFD453; }
+  .home .btn-close {
+    display: block;
+    margin-top: 2rem; }
+
+.home::after{
+    content: "";
+    background-image: url("../img/emprendedor.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.beneficios h2 {
+  font-family: "Source Sans Pro", sans-serif; }
+.beneficios .beneficios__informacion {
+  padding: 2rem; }
+.beneficios .beneficios__informacion--display {
+  display: flex;
+  align-items: center; }
+  .beneficios .beneficios__informacion--display img {
+    margin-right: 1rem; }
+
+.funciones {
+  padding-top: 5rem;
+  height: 50rem; }
+  .funciones h2 {
+    font-family: "Source Sans Pro", sans-serif; }
+  .funciones .row {
+    padding-top: 5rem; }
+    .funciones .row img {
+      width: 100px; }
+
+footer {
+  background-color: #212121;
+  height: 4rem; }

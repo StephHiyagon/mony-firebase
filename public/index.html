@@ -9,36 +9,40 @@
   <title>MONY</title>
 </head>
 <body>
- <div class="progress__register">
-    <ul class="estado-3pasos estado-login">
-        <li class="paso-1 presente"><span>1</span><p></p></li>
-        <li class="paso-2 presente"><span>2</span><p></p></li>
-        <li class="paso-3 presente"><span>3</span><p></p></li>
-        <li class="paso-4 "><span>4</span><p></p></li>
-    </ul>
+<header>
+<nav class="navbar navbar-default navbar-fixed-top transition">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img class="image-responsive" src="assets/img/logo-mony.png" alt="mony logo">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Explorar</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Iniciar Sesión</a></li>
+        <li class="active"><a href="#">Registrarse<span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
   </div>
-  <div id="root"></div>
+</nav>
+</header>
+<div id="root"></div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
-    authDomain: "monyapp-bf79c.firebaseapp.com",
-    databaseURL: "https://monyapp-bf79c.firebaseio.com",
-    projectId: "monyapp-bf79c",
-    storageBucket: "monyapp-bf79c.appspot.com",
-    messagingSenderId: "516782594145"
-  };
-  firebase.initializeApp(config);
-</script>
-  
-  <!-- <script src="assets/js/bootstrap.min.js"></script> -->
-  
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/componentes/user-register.js" charset="utf-8"></script>  
+  <script src="assets/js/componentes/validate.js"></script>
+  <script src="assets/js/componentes/info.js"></script>
   <script src="assets/js/componentes/perfil-register.js" charset="utf-8"></script>
-  <script src="assets/js/componentes/user-register.js" charset="utf-8"></script>
   <script src="assets/js/index.js"></script>
 </body>
 </html>
