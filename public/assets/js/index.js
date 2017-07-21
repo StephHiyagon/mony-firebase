@@ -59,4 +59,5 @@ const stateRecompensa = {
 $( _=>{
     const root =$('#root');
     render(root);
+  
 })
