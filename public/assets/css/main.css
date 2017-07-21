@@ -1,1 +1,14 @@
 
+#imgPerfil{
+  width: 100%;
+}
+
+.emprende{
+  position: relative;
+  top: 30vh;
+  font-size: 1.8rem;
+}
+
+.board{
+  margin-top: 25px;
+}

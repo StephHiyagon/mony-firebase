@@ -2,7 +2,7 @@ const UserRegister = (update)=>{
   console.log("registrate ahora ya!!!");
   const seccion =$('<section></section>');
   const progress=$('<div class="progress__register"><ul class="estado-3pasos estado-login"><li class="paso-1 presente"><span>1</span><p></p></li><li class="paso-2 presente"><span>2</span><p></p></li><li class="paso-3"><span>3</span><p></p></li><li class="paso-4"><span>4</span><p></p></li></ul></div>');
-  const form=$('<form action="#" class="register-card-div"></form>');
+  const form=$('<form class="register-card-div"></form>');
   const panel1=$('<div class="panel panel-default" ></div>');
   const panel2=$('<div class="panel-heading"></div>');
   const row0=$('<div class="row "></div>');
@@ -138,10 +138,10 @@ signup.on('click', e =>{
    const promise = auth.createUserWithEmailAndPassword(email, password);
 
    promise.catch(e => console.log(e.message));
-   setTimeout(function(){
-     state.screen=Validate;
+  //  setTimeout(function(){
+     state.screen=Dashboard;
      update();
-   },3000);
+  //  },3000);
 
 });
 
@@ -178,10 +178,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   // state.screen="Validate";
   // update();
 
-  setTimeout(function(){
-    state.screen=Validate;
+  // setTimeout(function(){
+    state.screen=Dashboard;
     update();
-  },3000);
+  // },10000);
   })
 
   btnF.on('click',function(){
@@ -200,13 +200,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }).catch(function(error) {
 	    console.log(error);
   });
-  // state.screen="Validate";
-  // update();
 
-  setTimeout(function(){
-    state.screen=Validate;
+
+  // setTimeout(function(){
+    state.screen=Dashboard;
     update();
-  },3000);
+  // },10000);
   })
 
   return seccion;

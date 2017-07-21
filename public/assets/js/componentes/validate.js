@@ -1,5 +1,6 @@
 const Validate = (update)=>{
   console.log("pantalla validar");
+  console.log(stateUser.name);
 }
 
 // const details = () => {
