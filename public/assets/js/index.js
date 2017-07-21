@@ -7,6 +7,7 @@ const render = (root)=>{
         section.append(UserRegister( _ => render(root)));
     }
     else{
+        console.log(state.screen);
         section.append(state.screen( _ => render(root)));
     };
 

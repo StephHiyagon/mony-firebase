@@ -134,8 +134,11 @@ signup.on('click', e =>{
    const promise = auth.createUserWithEmailAndPassword(email, password);
 
    promise.catch(e => console.log(e.message));
-   state.screen="Validate";
-   update();
+   setTimeout(function(){
+     state.screen=Validate;
+     update();
+   },3000);
+
 });
 
 
@@ -168,8 +171,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log("hubo un error" + err)
   })
 
-  state.screen="Validate";
-  update();
+  // state.screen="Validate";
+  // update();
+
+  setTimeout(function(){
+    state.screen=Validate;
+    update();
+  },10000);
   })
 
   btnF.on('click',function(){
@@ -188,8 +196,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }).catch(function(error) {
 	    console.log(error);
   });
-  state.screen="Validate";
-  update();
+  // state.screen="Validate";
+  // update();
+
+  setTimeout(function(){
+    state.screen=Validate;
+    update();
+  },10000);
   })
 
   return form;
