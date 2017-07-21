@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 const render = (root)=>{
     root.empty();
     const section = $('<section class="components"></section>');
 
     if(state.screen == null){
-        section.append(UserRegister( _ => render(root)));
+        section.append(Home( _ => render(root)));
     }else{
         section.append(state.screen( _ => render(root)));
     };

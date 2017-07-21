@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,CAAC;EACC,MAAM,EAAC,CAAC;EACR,OAAO,EAAC,CAAC;EACT,WAAW,ECLG,uBAAuB;EDMrC,KAAK,EEFgB,OAAO;;AFK9B,OAAO;EACL,OAAO,EAAE,IAAI;EACb,WAAG;IACD,KAAK,EAAE,IAAI",
+"sources": ["../../../src/assets/scss/main.scss","../../../src/assets/scss/_tipografy.scss","../../../src/assets/scss/_color.scss"],
+"names": [],
+"file": "main.css"
+}
