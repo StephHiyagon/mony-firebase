@@ -5,9 +5,11 @@ const render = (root)=>{
 
     if(state.screen == null){
         section.append(UserRegister( _ => render(root)));
-    }else{
+    }
+    else{
         section.append(state.screen( _ => render(root)));
     };
+
 
     root.append(section);
 };

@@ -11,6 +11,7 @@ const UserRegister = (update)=>{
   const row5=$('<div class="row "></div>');
   const row6=$('<div class="row "></div>');
   const row7=$('<div class="row "></div>');
+  const row8=$('<div class="row "></div>');
   const divI0=$('<div class="col-md-6 col-md-offset-3 form-group"></div>');
   const divI1=$('<div class="col-md-6 col-md-offset-3 form-group"></div>');
   const divI2=$('<div class="col-md-6 col-md-offset-3 form-group"></div>');
@@ -19,11 +20,14 @@ const UserRegister = (update)=>{
   const divI5=$('<div class="col-md-6 col-md-offset-3 form-group text-center"></div>');
   const divI6=$('<div class="col-md-6 col-md-offset-3 form-group text-center"></div>');
   const divI7=$('<div class="col-md-6 col-md-offset-3 form-group text-center"></div>');
+  const divI8=$('<div class="col-md-6 col-md-offset-3 form-group text-center"></div>');
   const name=$('<input type="text" class="form-control" placeholder="Nombre" id="name"/>');
   const email=$('<input type="text" class="form-control" placeholder="Correo" id="mail"/>');
   const pass=$('<input type="password" class="form-control" placeholder="Contraseña" id="password"/>');
   const h2=$('<h2>Registarse</h2>');
   const text=$('<p>Al registrarse acepta los términos y condiciones</p>');
+  const hi=$('<h4>Bienvenido <span id="saludo"></span></h4>');
+  const continua=$('<button class="btn btn-success btn-lg" type="submit" id="continua">Continuar</button>');
   // const login=$('<button class="btn btn-default" type="submit" id="login">Ingresa</button>');
   const signup=$('<button class="btn btn-default btn-lg" type="submit" id="signup">Crear cuenta</button>');
   // const close=$('<button class="btn btn-default" type="submit" id="cerrar">LogOut</button>');
@@ -56,21 +60,7 @@ const UserRegister = (update)=>{
   panel2.append(row7);
   row7.append(divI7);
   divI7.append(btnG);
-// login.on('click', e =>{
-//    const email = $('#mail').val();
-//    const password = $('#password').val();
-//    const auth = firebase.auth();
-//    stateUser.name=$('#name').val();
-//    stateUser.email=email;
-//    console.log(stateUser.name);
-//    console.log(stateUser.email);
-//    const promise = auth.signInWithEmailAndPassword(email,password);
-//
-//    promise.catch(e => console.log(e.message)
-//
-//
-//  );
-// });
+  panel2.append(row8);
 
 function letras(e){
   var key=e.keyCode;
@@ -125,7 +115,7 @@ function valida(event){
         return txt = txt + e.charAt(0).toUpperCase() + e.slice(1) + " ";});
       var imp=txt.trim();
       console.log(imp);
-    	return $(this).val()=imp;
+    	// return $(this).text(imp);
     }
 }
 
@@ -144,12 +134,10 @@ signup.on('click', e =>{
    const promise = auth.createUserWithEmailAndPassword(email, password);
 
    promise.catch(e => console.log(e.message));
+   state.screen="Validate";
+   update();
 });
 
-
-// close.on('click', e =>{
-//    firebase.auth().signOut();
-// });
 
 //Add user with password and email
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -161,7 +149,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 });
 
   btnG.on('click', function(){
-    var provider = new firebase.auth.GoogleAuthProvider();
+  var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/plus.login');
   firebase.auth().signInWithPopup(provider)
   .then(function(result){
@@ -172,10 +160,16 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log("el usuario es" + user.displayName)
     console.log(user);
     console.log(stateUser.email);
+
+    // $('#saludo').text(user.displayName);
+    // $('#btn-google').css("display", "none") && $('#continua').css("display", "block");
   })
   .catch(function(err){
     console.log("hubo un error" + err)
   })
+
+  state.screen="Validate";
+  update();
   })
 
   btnF.on('click',function(){
@@ -190,9 +184,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       stateProfile.imagen=result.user.photoURL;
       console.log(stateUser.name);
       console.log(stateUser.email);
+
     }).catch(function(error) {
 	    console.log(error);
   });
+  state.screen="Validate";
+  update();
   })
 
   return form;
