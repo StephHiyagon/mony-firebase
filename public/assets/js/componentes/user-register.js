@@ -1,4 +1,4 @@
 const UserRegister = (update)=>{
-  console.log("registrate");
+  console.log("registrate ahora ya!!!");
 
 }
