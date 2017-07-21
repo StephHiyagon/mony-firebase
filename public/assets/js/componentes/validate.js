@@ -2,18 +2,18 @@ const details = (container) => {
     container.empty();
     const divResponse = $('<div class="response"></div>');
     const messageValidate = $('<span class="text-danger"></span>');
-    const btnSave = $('<button id="btnSave"  class="btn btn-default save" type="submit">Guardar Datos</button>');
+    const btnSave = $('<button id="btnSave" class="btn btn-default save" type="submit">Guardar Datos</button>');
 
     if ((typeof data) === "string"){
         const message = $(`<span class="text-danger">${data}</span>`);
         divResponse.append(message);
     }else if(state.dataSunat.tipo_contribuyente !== "PERSONA NATURAL SIN NEGOCIO"){
-        const ulData = $(`<ul>
-                                <li>Ruc: ${state.dataSunat.ruc}</li>
-                                <li>Razon Social: ${state.dataSunat.razon_social}</li>
-                                <li>Estado Contribuyente: ${state.dataSunat.estado_contribuyente}</li>
-                                <li>Tipo de Contribuyente: ${state.dataSunat.tipo_contribuyente}</li>
-                                <li>Dirección: ${state.dataSunat.direccion}</li>
+        const ulData = $(`<ul class="list-group">
+                                <li class="list-group-item">Ruc: ${state.dataSunat.ruc}</li>
+                                <li class="list-group-item">Razon Social: ${state.dataSunat.razon_social}</li>
+                                <li class="list-group-item">Estado Contribuyente: ${state.dataSunat.estado_contribuyente}</li>
+                                <li class="list-group-item">Tipo de Contribuyente: ${state.dataSunat.tipo_contribuyente}</li>
+                                <li class="list-group-item">Dirección: ${state.dataSunat.direccion}</li>
                           </ul>`);
         divResponse.append(ulData);
         divResponse.append(btnSave);
@@ -30,13 +30,38 @@ const details = (container) => {
       stateCompany.direction = state.dataSunat.direccion;
         // state.screen = PerfilRegister;
         console.log("aki");
+        db.ref('data').push({
+            user :{
+              name : stateUser.name,
+              email : stateUser.email,
+              password : stateUser.pwd
+            },
+            company : {
+                ruc : stateCompany.ruc,
+                razsocial : stateCompany.razonsocial,
+        		image: stateCompany.image,
+                econtribuyente : stateCompany.estado,
+                tcontribuyente : stateCompany.tipo,
+                direction : stateCompany.direction
+            },
+            perfil : {
+                monto : stateProfile.monto,
+                description : stateProfile.description,
+                image : stateProfile.image,
+                rubro : stateProfile.rubro,
+                recompensa : {
+                    producto :stateRecompensa.producto,
+                    action : stateRecompensa.acciones
+                }
+            }
+        });
     // update();
 });
 
   container.append(divResponse);
 };
 const ValidateRuc = (update) => {
-    const tecactusApi = new TecactusApi("dTBvBWAG9zNqDaIdYUPaPxirTypgikwWEvUVDJqT");
+    const tecactusApi = new TecactusApi("mY0G17HwnfIhT4wNgVUUi6xLXIFFolndZYeher92");
     const container = $('<section class="container"></section>');
     const progressBar = $(`<div class="progress__register">
     <ul class="estado-3pasos estado-login">
@@ -53,11 +78,11 @@ const ValidateRuc = (update) => {
                       <p>Para poder ofrecerte la mejor experiencia posible, necesitamos saber algo más sobre tu empresa</p>
                     </div>`);
 
-    const formContainer = $('<form action="" class="form-horizontal col-xs-12 col-md-6 col-md-offset-3 text-center"></form>');
+    const formContainer = $('<form action="" class="col-xs-12 col-md-6 col-md-offset-3 text-center"></form>');
     const formGroup = $('<div class="form-group"></div>');
     const inputRuc = $('<input id="ruc" type="text" class="form-control" maxlength="11" placeholder="Ingresa RUC de 11 dígitos">');
     const btnValidate = $('<button id="consultar" type="submit" class="btn btn-default">Validar</button>');
-
+    const row1 = $('<div class="row"></div>');
     const validateContainer = $('<div class="col-xs-12 col-md-6 col-md-offset-3"></div>');
     const alert = $(`<span class="text-danger"></span>`);
 
@@ -98,6 +123,7 @@ const ValidateRuc = (update) => {
             validateContainer.append(alert);
         }
       });
-      container.append(validateContainer);
+      row1.append(validateContainer);
+      container.append(row1);
     return container;
 };

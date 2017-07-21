@@ -32,6 +32,7 @@ const state = {
 const stateUser = {
     name : null,
     email : null,
+    pwd : null
 }
 
 const stateCompany = {
