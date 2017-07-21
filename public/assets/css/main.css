@@ -2,6 +2,11 @@ body{
     overflow-x: hidden;
 }
 
+.panel .panel-default{
+    border: none;
+    box-shadow: none;
+}
+
 .img-responsive{
     margin: auto;
     padding-top: 2em;
@@ -74,8 +79,13 @@ body{
      width: 30px;
      height: 30px;
 }
+.panel-default>.panel-heading{
+    background-color: transparent !important;
+    border: none!important;
+}
 .progress__register {
   margin-bottom: 70px;
+  padding-top: 8.5em;
 }
 .estado-3pasos {
     width: 90%;
