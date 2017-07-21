@@ -4,7 +4,7 @@ const render = (root)=>{
     const section = $('<section class="components"></section>');
 
     if(state.screen == null){
-        section.append(UserRegister( _ => render(root)));
+        section.append(PerfilRegister( _ => render(root)));
     }else{
         section.append(state.screen( _ => render(root)));
     };
@@ -22,6 +22,7 @@ const stateUser = {
     token : null,
     name : null,
     email : null,
+    pwd : null
 }
 
 const stateCompany = {
