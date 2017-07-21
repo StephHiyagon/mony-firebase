@@ -4,7 +4,7 @@ const render = (root)=>{
     const section = $('<section class="components"></section>');
 
     if(state.screen == null){
-        section.append(UserRegister( _ => render(root)));
+        section.append(Home( _ => render(root)));
     }else{
         section.append(state.screen( _ => render(root)));
     };
@@ -12,16 +12,16 @@ const render = (root)=>{
     root.append(section);
 };
 
-// var config = {
-//     apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
-//     authDomain: "monyapp-bf79c.firebaseapp.com",
-//     databaseURL: "https://monyapp-bf79c.firebaseio.com",
-//     projectId: "monyapp-bf79c",
-//     storageBucket: "",
-//     messagingSenderId: "516782594145"
-//   };
-//
-// firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
+    authDomain: "monyapp-bf79c.firebaseapp.com",
+    databaseURL: "https://monyapp-bf79c.firebaseio.com",
+    projectId: "monyapp-bf79c",
+    storageBucket: "",
+    messagingSenderId: "516782594145"
+  };
+
+firebase.initializeApp(config);
 var db = firebase.database();
 
 const state = {
