@@ -19,7 +19,7 @@
   background-image: url("../img/emprendedor.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 45rem;
+  height: 55rem;
   color: #FFFFFF; }
   .home h1 {
     font-family: "Source Sans Pro", sans-serif; }
@@ -32,6 +32,8 @@
     display: block;
     margin-top: 2rem; }
 
+.beneficios h2 {
+  font-family: "Source Sans Pro", sans-serif; }
 .beneficios .beneficios__informacion {
   padding: 2rem; }
 .beneficios .beneficios__informacion--display {
@@ -39,6 +41,16 @@
   align-items: center; }
   .beneficios .beneficios__informacion--display img {
     margin-right: 1rem; }
+
+.funciones {
+  padding-top: 5rem;
+  height: 50rem; }
+  .funciones h2 {
+    font-family: "Source Sans Pro", sans-serif; }
+  .funciones .row {
+    padding-top: 5rem; }
+    .funciones .row img {
+      width: 100px; }
 
 footer {
   background-color: #212121;

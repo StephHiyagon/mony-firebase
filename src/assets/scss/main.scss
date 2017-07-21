@@ -25,7 +25,7 @@
   background-image: url("../img/emprendedor.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 45rem;
+  height: 55rem;
   color: $primary-color-text;
   h1{
     font-family: $font-prymary;
@@ -46,6 +46,9 @@
 }
 
 .beneficios {
+  h2{
+    font-family: $font-prymary;
+  }
   .beneficios__informacion{
     padding: 2rem;
   }
@@ -58,6 +61,19 @@
   }
 }
 
+.funciones {
+  padding-top: 5rem;
+  height: 50rem;
+  h2{
+    font-family: $font-prymary;
+  }
+  .row{
+    padding-top: 5rem;
+    img{
+      width: 100px;
+    }
+  }
+}
 footer{
   background-color: $primary-text-color;
   height: 4rem;
