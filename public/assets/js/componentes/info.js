@@ -8,8 +8,8 @@ const Home = (update) => {
 
         button.on('click',()=>{
         console.log("asdsadas");
-       state.screen = UserRegister; 
-       update();
+        state.screen = UserRegister; 
+        update();
     });
     
     sectionFunciones.append(ComoFunciona());
