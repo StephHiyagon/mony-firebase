@@ -2,7 +2,7 @@ const UserRegister = (update)=>{
   console.log("registrate ahora ya!!!");
   const seccion =$('<section></section>');
   const progress=$('<div class="progress__register"><ul class="estado-3pasos estado-login"><li class="paso-1 presente"><span>1</span><p></p></li><li class="paso-2"><span>2</span><p></p></li><li class="paso-3"><span>3</span><p></p></li><li class="paso-4"><span>4</span><p></p></li></ul></div>');
-  const form=$('<form action="#" class="register-card-div"></form>');
+  const form=$('<form class="register-card-div"></form>');
   const panel1=$('<div class="panel panel-default" ></div>');
   const panel2=$('<div class="panel-heading"></div>');
   const row0=$('<div class="row "></div>');
@@ -26,9 +26,11 @@ const UserRegister = (update)=>{
   const name=$('<input type="text" class="form-control" placeholder="Nombre" id="name"/>');
   const email=$('<input type="text" class="form-control" placeholder="Correo" id="mail"/>');
   const pass=$('<input type="password" class="form-control" placeholder="Contraseña" id="password"/>');
+
   const h2=$('<h2>Registrarse</h2>');
   const text=$('<p>Al registrarse acepta los términos y condiciones</p>');
   const signup=$('<button class="btn btn-default btn-lg" type="submit" id="signup">Crear cuenta</button>');
+
   const btnG=$('<button class="btn btn-danger btn-lg" type="submit" id="btn-google"><span class="icon-google-plus"></span> Entrar con Google + </button>');//falta icono
   const btnF=$('<button class="btn btn-primary btn-lg" type="submit" id="btn-facebook"><span class="icon-facebook"></span> Entrar con Facebook</button>');
 
@@ -116,23 +118,27 @@ function valida(event){
     	// return $(this).text(imp);
     }
 }
+
   name.on('blur',valida);
 
-signup.on('click', (e) =>{
+  name.on('blur',valida);
+
+
+signup.on('click', e =>{
    const email = $('#mail').val();
    const password = $('#password').val();
-   const auth = firebase.auth();
-    const user = auth.currentUser;
-    const uid = user.uid;
-  stateUser.name=$('#name').val();
-  stateUser.token = uid;
-  stateUser.email=email;
-    console.log(uid);
+   const auth = firebase.auth();/*
+   const user = auth.currentUser;
+   const uid = user.uid;*/
+   stateUser.name=$('#name').val();
+   stateUser.email=email;
+
   console.log(stateUser.name);
   console.log(stateUser.email);
-   const promise = auth.createUserWithEmailAndPassword(email, password);
+  const promise = auth.createUserWithEmailAndPassword(email, password);
 
-   promise.catch(e => console.log(e.message));
+   /*promise.catch(e => console.log(e.message));*/
+
     state.screen=ValidateRuc;
     update();
 });
@@ -161,33 +167,35 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log(user);
     console.log(stateUser.email);
   })
-  .catch(function(err){
+  
+      .catch(function(err){
     console.log("hubo un error" + err)
   });
 
       state.screen=ValidateRuc;
       update();
 
-  })
-
+  });
+    
   btnF.on('click',function(){
     var provider = new firebase.auth.FacebookAuthProvider();
     provider.addScope('public_profile');
    firebase.auth().signInWithPopup(provider).then(function(result) {
-	    console.log(result.user);
-       stateUser.token = result.user.uid;
       stateUser.name =result.user.displayName;
       stateUser.email=result.user.email;
       stateProfile.imagen=result.user.photoURL;
+      stateUser.token = result.user.uid;
       console.log(stateUser.name);
       console.log(stateUser.email);
 
     }).catch(function(error) {
 	    console.log(error);
-  });
+    });
       state.screen=ValidateRuc;
       update();
 
   });
-  return seccion;
-};
+    
+    return seccion;
+}
+  

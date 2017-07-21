@@ -1,10 +1,11 @@
 const PerfilRegister = (update)=>{    
-    const perfil = $('<section id="perfil" class="container"></section>');
+    const perfil = $('<section id="perfil" class="container padding"></section>');
     const row = $('<div class="row"></div>');
     const dataPerfil = $('<div class="col-xs-12 col-md-6"></div>');
     const dataCompany = $('<div class="col-xs-12 col-md-6"></div>');
+     const progress=$('<div class="progress__register"><ul class="estado-3pasos estado-login"><li class="paso-1 presente"><span>1</span><p></p></li><li class="paso-2 presente"><span>2</span><p></p></li><li class="paso-3 presente"><span>3</span><p></p></li><li class="paso-4"><span>4</span><p></p></li></ul></div>');
+    /*const userInfo = $('<div class="info"><h3>'+stateUser.name+'</h3><br><h5>'+stateUser.email+'</h5></div>');*/
     
-    const userInfo = $('<div class="info"><h3>'+stateUser.name+'</h3><br><h5>'+stateUser.email+'</h5></div>');
     const userCompany = $('<div class="info"><h3>'+stateCompany.razonsocial+'</h3><br><h5>'+stateCompany.ruc+'</h5></div>');
     
     const user = $('<div id="iprofile"><img src="" id="imagenprofile"></div>');
@@ -26,10 +27,10 @@ const PerfilRegister = (update)=>{
     
     const save = $('<input type="submit" value="save" class="save btn">');
         
-    user.append(userInfo);
+/*    user.append(userInfo);*/
     company.append(userCompany);
     
-    dataPerfil.append(user);
+   dataPerfil.append(user);
     dataPerfil.append(company);
     
     recompensas.append(recom_opc1);
@@ -46,8 +47,10 @@ const PerfilRegister = (update)=>{
     dataCompany.append(contain);
     row.append(dataPerfil);
     row.append(dataCompany);
-    perfil.append(row);
     
+    $('nav').hide();
+    perfil.append(progress);
+    perfil.append(row);
     save.on('click', (e)=>{
         e.preventDefault();
         

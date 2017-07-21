@@ -8,7 +8,7 @@ const details = (container,update) => {
         const message = $(`<span class="text-danger">${state.dataSunat}</span>`);
         divResponse.append(message);
     }else if(state.dataSunat.tipo_contribuyente !== "PERSONA NATURAL SIN NEGOCIO"){
-        const ulData = $(`<ul class="list-group">
+        const ulData = $(`<ul class="list-group padding">
                                 <li class="list-group-item">Ruc: ${state.dataSunat.ruc}</li>
                                 <li class="list-group-item">Razon Social: ${state.dataSunat.razon_social}</li>
                                 <li class="list-group-item">Estado Contribuyente: ${state.dataSunat.estado_contribuyente}</li>
@@ -34,6 +34,7 @@ const details = (container,update) => {
 
   container.append(divResponse);
 };
+
 const ValidateRuc = (update) => {
     const tecactusApi = new TecactusApi("mY0G17HwnfIhT4wNgVUUi6xLXIFFolndZYeher92");
     const container = $('<section class="container"></section>');

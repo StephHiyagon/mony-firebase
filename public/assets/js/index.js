@@ -1,14 +1,16 @@
 "use strict";
 const render = (root)=>{
     root.empty();
-    const section = $('<section class="components"></section>');
+    const section = $('<div class="components"></div>');
 
     if(state.screen == null){
         section.append(Home( _ => render(root)));
     }
     else{
+        console.log(state.screen);
         section.append(state.screen( _ => render(root)));
-    }
+    };
+
     root.append(section);
 };
 

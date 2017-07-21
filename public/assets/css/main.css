@@ -19,6 +19,9 @@ body{
 	transition: all 1s ease-in-out;
 }
 
+.padding{
+    padding-top: 0.5em;
+}
 .funciones h2{
     font-weight: bold;
 }
@@ -224,3 +227,17 @@ li{
 footer {
   background-color: #212121;
   height: 4rem; }
+
+.circulo{
+  width: 50%;
+}
+
+.emprende{
+  position: relative;
+  top: 30vh;
+  font-size: 1.8rem;
+}
+
+.board{
+  margin-top: 25px;
+}
