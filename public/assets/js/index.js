@@ -4,13 +4,17 @@ const render = (root)=>{
     const section = $('<section class="components"></section>');
 
     if(state.screen == null){
-        section.append(Home( _ => render(root)));
+        section.append(ValidateRuc( _ => render(root)));
     }else{
         section.append(state.screen( _ => render(root)));
     };
 
     root.append(section);
 };
+// const state = {
+//     screen : null,
+//     dataSunat:null
+// }
 
 var config = {
     apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
@@ -25,8 +29,10 @@ firebase.initializeApp(config);
 var db = firebase.database();
 
 const state = {
-    screen : null
+    screen : null,
+    dataSunat:null
 }
+
 const stateUser = {
     name : null,
     email : null,

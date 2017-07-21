@@ -1,3 +1,3 @@
-const Home = ()=>{
+const Home = (update)=>{
   state.screen = UserRegister;
 };
