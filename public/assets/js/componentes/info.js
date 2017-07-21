@@ -1,6 +1,6 @@
 const Home = (update) => {
     const container   = $('<div class="landing"></div>');
-    const seccionHome = $(`<section class="home">
+    const sectionHome = $(`<section class="home">
         <h1 class="text-center">TE AYUDAMOS A HACER REALIDAD TU PROYECTO</h1>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Consigue inversión</button>
         <div id="myModal" class="modal fade" role="dialog">
@@ -18,12 +18,13 @@ const Home = (update) => {
           </div>
         </div>
     </section>`);
-
-    const seccionBeneficios = $('<seccion id="beneficios" class="beneficios"></seccion>');
+    const sectionFunciona   = $('<section></section>');
+    const sectionBeneficios = $('<seccion id="beneficios" class="beneficios"></seccion>');
 
     container.append(seccionHome);
-    seccionBeneficios.append(Beneficios());
-    container.append(seccionBeneficios);
+    sectionBeneficios.append(Beneficios());
+    container.append(sectionBeneficios);
+    sectionFunciona.append(ComoFunciona());
 
     return container;
 }
@@ -49,4 +50,14 @@ const Beneficios=_=>{
     container.append(informacion);
 
     return container;
+}
+
+const ComoFunciona = () => {
+    const funcionamiento = $(`<section id="como-funciona">
+        <h1>¿CÓMO FUNCIONA?</h1>
+        <div class="paso1">Define tu objetivo y cuánto dinero necesitas para lograrlo</div>
+        <span class="glyphicons glyphicons-fees-payments"></span>
+    </section>`);
+
+    return funcionamiento;
 }
