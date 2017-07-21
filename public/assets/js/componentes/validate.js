@@ -1,8 +1,8 @@
-const details = (container, data) => {
+const details = (container) => {
     container.empty();
     const divResponse = $('<div class="response"></div>');
     const messageValidate = $('<span class="text-danger"></span>');
-    const btnSave = $('<button id="btnSend" type="submit">Guardar Datos</button>');
+    const btnSave = $('<button id="btnSave"  class="btn btn-default save" type="submit">Guardar Datos</button>');
 
     if ((typeof data) === "string"){
         const message = $(`<span class="text-danger">${data}</span>`);
@@ -23,6 +23,11 @@ const details = (container, data) => {
           divResponse.append(messageValidate);
     }
     btnSave.on('click',() => {
+      stateCompany.ruc = state.dataSunat.ruc;
+      stateCompany.razonsocial = state.dataSunat.razon_social;
+      stateCompany.estado = state.dataSunat.estado_contribuyente;
+      stateCompany.tipo = state.dataSunat.tipo_contribuyente;
+      stateCompany.direction = state.dataSunat.direccion;
         // state.screen = PerfilRegister;
         console.log("aki");
     // update();
@@ -31,7 +36,16 @@ const details = (container, data) => {
   container.append(divResponse);
 };
 const ValidateRuc = (update) => {
+    const tecactusApi = new TecactusApi("dTBvBWAG9zNqDaIdYUPaPxirTypgikwWEvUVDJqT");
     const container = $('<section class="container"></section>');
+    const progressBar = $(`<div class="progress__register">
+    <ul class="estado-3pasos estado-login">
+        <li class="paso-1 presente"><span>1</span><p></p></li>
+        <li class="paso-2 presente"><span>2</span><p></p></li>
+        <li class="paso-3"><span>3</span><p></p></li>
+        <li class="paso-4"><span>4</span><p></p></li>
+    </ul>
+  </div>`);
     const row = $('<div class="row"></div>');
     // const title =$(`<h4>Hola ${stateUser.name}</h4>`);
     const title =$(`<div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
@@ -39,20 +53,27 @@ const ValidateRuc = (update) => {
                       <p>Para poder ofrecerte la mejor experiencia posible, necesitamos saber algo más sobre tu empresa</p>
                     </div>`);
 
-    const formContainer = $('<form action="" class="col-xs-12 col-md-6 col-md-offset-3"></form>');
+    const formContainer = $('<form action="" class="form-horizontal col-xs-12 col-md-6 col-md-offset-3 text-center"></form>');
     const formGroup = $('<div class="form-group"></div>');
-    const inputRuc = $('<input id="ruc" type="number" class="form-control" placeholder="Ingresa RUC de 11 dígitos">');
-    const btnValidate = $('<input id="consultar" type="submit" class="btn btn-default" value="Consultar">');
+    const inputRuc = $('<input id="ruc" type="text" class="form-control" maxlength="11" placeholder="Ingresa RUC de 11 dígitos">');
+    const btnValidate = $('<button id="consultar" type="submit" class="btn btn-default">Validar</button>');
+
     const validateContainer = $('<div class="col-xs-12 col-md-6 col-md-offset-3"></div>');
     const alert = $(`<span class="text-danger"></span>`);
 
     formGroup.append(inputRuc);
-    formGroup.append(btnValidate);
     formContainer.append(formGroup);
+    formContainer.append(btnValidate);
+    row.append(title);
+    row.append(formContainer);
+    container.append(progressBar);
     container.append(row);
-    container.append(title);
-    container.append(formContainer);
-    const tecactusApi = new TecactusApi("dTBvBWAG9zNqDaIdYUPaPxirTypgikwWEvUVDJqT");
+
+    inputRuc.on('keydown',(e)=>{
+        if( e.keyCode > 47 && e.keyCode < 58 ||  e.keyCode === 8){
+            return true;
+        }
+    });
     btnValidate.on('click', (e) =>{
         e.preventDefault();
         console.log(inputRuc.val());
@@ -63,7 +84,7 @@ const ValidateRuc = (update) => {
                   console.log(response.data);
                   console.log(response.status);
                   state.dataSunat = response.data;
-                  details(validateContainer,state.dataSunat);
+                  details(validateContainer);
               })
               .catch(function (response) {
                   console.log("algo ocurrió");

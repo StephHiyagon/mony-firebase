@@ -11,10 +11,6 @@ const render = (root)=>{
 
     root.append(section);
 };
-// const state = {
-//     screen : null,
-//     dataSunat:null
-// }
 
 var config = {
     apiKey: "AIzaSyBDrFEJyWV-J3R8eQWdwKqw_uIgrbCgfC8",
@@ -41,7 +37,7 @@ const stateUser = {
 const stateCompany = {
     ruc : null,
     razonsocial : null,
-	image : null,
+	  image : null,
     estado : null,
     tipo : null,
     direction : null
