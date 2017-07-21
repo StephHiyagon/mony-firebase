@@ -6,10 +6,10 @@ const Dashboard = (update)=>{
   const financiamiento = $('<div class="row"><div class="col-md-6 board"><h4>Dashboard de financiamiento</h4><img class="img-responsive" src="assets/img/financia.png" /></div></div>');
   const companyContainer = $(`<div class="col-xs-12 col-md-6"></div>`);
    const thumbnail = $(`<div class="thumbnail"></div>`);
-   const imgCompany = $(`<img src="${stateCompany.image}" alt="Imagen de emprendedor">`);
+   const imgCompany = $(`<img src="assets/img/sabor.jpg" alt="Imagen de emprendedor">`);
 
    const divCaption = $(`<div class="caption">
-                           <h3>Thumbnail label</h3>
+                           <h3>${stateCompany.razonsocial}</h3>
                            <p>Ruc: ${stateCompany.ruc}</p>
                            <p>Descripción: ${stateCompany.description}</p>
                          </div>`);
@@ -28,13 +28,16 @@ const Dashboard = (update)=>{
   console.log(stateUser.email);
 
   setTimeout(function(){
-    $('#username').append('<span>'+stateUser.name+'</span>');
-    $('#usermail').append('<span>'+stateUser.email+'</span>');
+
 
     if(stateProfile.imagen!=null){
       $('#imgPerfil').attr("src",stateProfile.imagen)
+      $('#username').append('<span>'+stateUser.name+'</span>');
+      $('#usermail').append('<span>'+stateUser.email+'</span>');
     }else{
-      $('#imgPerfil').attr("src","assets/img/lalo.jpg");
+      $('#imgPerfil').attr("src","assets/img/foto.jpg");
+      $('#username').append('<span>'+stateUser.name+'</span>');
+      $('#usermail').append('<span>'+stateUser.email+'</span>');
     }
 
   },15000);
