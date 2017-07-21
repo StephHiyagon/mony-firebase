@@ -1,5 +1,7 @@
 const UserRegister = (update)=>{
   console.log("registrate ahora ya!!!");
+  const seccion =$('<section></section>');
+  const progress=$('<div class="progress__register"><ul class="estado-3pasos estado-login"><li class="paso-1 presente"><span>1</span><p></p></li><li class="paso-2 presente"><span>2</span><p></p></li><li class="paso-3"><span>3</span><p></p></li><li class="paso-4"><span>4</span><p></p></li></ul></div>');
   const form=$('<form action="#" class="register-card-div"></form>');
   const panel1=$('<div class="panel panel-default" ></div>');
   const panel2=$('<div class="panel-heading"></div>');
@@ -34,6 +36,8 @@ const UserRegister = (update)=>{
   const btnG=$('<button class="btn btn-danger btn-lg" type="submit" id="btn-google"><span class="icon-google-plus"></span> Entrar con Google + </button>');//falta icono
   const btnF=$('<button class="btn btn-primary btn-lg" type="submit" id="btn-facebook"><span class="icon-facebook"></span> Entrar con Facebook</button>');
 
+  seccion.append(progress);
+  seccion.append(form);
   form.append(panel1);
 	panel1.append(panel2);
   panel2.append(row0);
@@ -177,7 +181,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   setTimeout(function(){
     state.screen=Validate;
     update();
-  },10000);
+  },3000);
   })
 
   btnF.on('click',function(){
@@ -202,8 +206,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   setTimeout(function(){
     state.screen=Validate;
     update();
-  },10000);
+  },3000);
   })
 
-  return form;
+  return seccion;
 }

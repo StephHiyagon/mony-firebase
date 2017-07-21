@@ -1,28 +1,28 @@
-[debug] [2017-07-21T12:54:49.176Z] ----------------------------------------------------------------------
-[debug] [2017-07-21T12:54:49.179Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\LABORATORIA 0092\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-07-21T12:54:49.180Z] CLI Version:  3.9.1
-[debug] [2017-07-21T12:54:49.180Z] Platform:     win32
-[debug] [2017-07-21T12:54:49.180Z] Node Version: v6.9.4
-[debug] [2017-07-21T12:54:49.181Z] Time:         Fri Jul 21 2017 07:54:49 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T12:54:49.181Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T13:08:33.224Z] ----------------------------------------------------------------------
+[debug] [2017-07-21T13:08:33.227Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\LABORATORIA 0092\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-21T13:08:33.227Z] CLI Version:  3.9.1
+[debug] [2017-07-21T13:08:33.227Z] Platform:     win32
+[debug] [2017-07-21T13:08:33.227Z] Node Version: v6.9.4
+[debug] [2017-07-21T13:08:33.228Z] Time:         Fri Jul 21 2017 08:08:33 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:33.228Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-07-21T12:54:49.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-07-21T12:54:49.201Z] > authorizing via signed-in user
-[debug] [2017-07-21T12:54:49.203Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/monyapp-bf79c  
- Fri Jul 21 2017 07:54:49 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T12:54:50.261Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T12:54:50.267Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/monyapp-bf79c/tokens  
- Fri Jul 21 2017 07:54:50 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T12:54:51.013Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:33.248Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-21T13:08:33.249Z] > authorizing via signed-in user
+[debug] [2017-07-21T13:08:33.252Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/monyapp-bf79c  
+ Fri Jul 21 2017 08:08:33 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:34.326Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:34.330Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/monyapp-bf79c/tokens  
+ Fri Jul 21 2017 08:08:34 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:36.229Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\LABORATORIA 0092\Desktop\mony-firebase'...
 [info] 
-[debug] [2017-07-21T12:54:51.019Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/monyapp-bf79c  
- Fri Jul 21 2017 07:54:51 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T12:54:51.613Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-21T12:54:51.615Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/516782594145/clients/_:getWebAppConfig  
- Fri Jul 21 2017 07:54:51 GMT-0500 (SA Pacific Standard Time)
-[debug] [2017-07-21T12:54:52.335Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:36.244Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/monyapp-bf79c  
+ Fri Jul 21 2017 08:08:36 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:37.456Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-21T13:08:37.458Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/516782594145/clients/_:getWebAppConfig  
+ Fri Jul 21 2017 08:08:37 GMT-0500 (SA Pacific Standard Time)
+[debug] [2017-07-21T13:08:38.445Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 
